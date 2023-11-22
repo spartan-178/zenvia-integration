@@ -1,0 +1,58 @@
+{
+  "version": "2.0",
+  "app_name": "zenvia-integration",
+  "iam_role_arn": "arn:aws:iam::205348268217:role/service-role/testing-role-rs1lxfj8",
+  "manage_iam_role": false,
+  "automatic_layer": false,
+  "environment_variables": {
+    "PROXY_CONF": "eyJodHRwOi8vIjogImh0dHA6Ly8xNzAuMTAuMjIuMTg0OjMxMjgiLCAiaHR0cHM6Ly8iOiAiaHR0cDovLzE3MC4xMC4yMi4xODQ6MzEyOCJ9"
+  },
+  "layers": [
+    "arn:aws:lambda:us-east-1:205348268217:layer:zenvia-layer:1"
+  ],
+  "lambda_memory_size": 512,
+  "lambda_timeout": 60,
+  "security_group_ids": [
+    "sg-0721f6c388ce91544"
+  ],
+  "subnet_ids": [
+    "subnet-0754491557f0d8ab9",
+    "subnet-0f8a79412402caa71"
+  ],
+  "stages": {
+    "develop": {
+      "api_gateway_stage": "api",
+      "api_gateway_endpoint_type": "REGIONAL",
+      "environment_variables": {
+        "URI_WEBAPP": "*",
+        "JWT_KEY": "a05zRmMxNTZRZzphYy1jcUoqOXJvY2RZTFxnSCFXKz4=",
+        "JWT_ISS": "NWY5MDcxZTRmMGUxMzkzNWVkZjMzODBl",
+        "JWT_AUD": "WjNudjE0ZDN2",
+        "WHATSAPP_FMP": "NTIxNTU0MTYzNDgwNg==",
+        "WHATSAPP_GENERAL": "NTIxNTU4MTI4OTU4Mw==",
+        "API_KEY": "NlFFOG1yOXc5dldXZUdwOFZ2TkFPZkZDQzByckpOOWY5c2s5",
+        "API_ZENVIA": "aHR0cHM6Ly9hcGkuemVudmlhLmNvbS92Mi9jaGFubmVscy93aGF0c2FwcC9tZXNzYWdlcw==",
+        "TEMPLATE_GENERAL": "YThmNjk5ZDItYzM3Ni00MjZlLTk2ZjgtNmFhZjc3OTAyMzg4",
+        "TEMPLATE_FMP": "M2VhYjlkNGUtNGVjMy00MzE1LTk0NDEtNTkxOWYwMjRiOTg2"
+      },
+      "tags": {
+        "stage": "develop",
+        "project": "zenvia-integration"
+      }
+    },
+    "prod": {
+      "api_gateway_stage": "api",
+      "api_gateway_endpoint_type": "REGIONAL",
+      "environment_variables": {
+        "URI_WEBAPP": "*",
+        "JWT_KEY": "a05zRmMxNTZRZzphYy1jcUoqOXJvY2RZTFxnSCFXKz4=",
+        "JWT_ISS": "NWY5MDcxZTRmMGUxMzkzNWVkZjMzODBl",
+        "JWT_AUD": "WjNudjE0UHIwZA=="
+      },
+      "tags": {
+        "stage": "prod",
+        "project": "zenvia-integration"
+      }
+    }
+  }
+}

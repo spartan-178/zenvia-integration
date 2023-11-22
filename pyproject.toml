@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "zenvia-integration"
+version = "0.1.0"
+description = ""
+authors = ["spartan-178 <jorge.chavez@prestanomico.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+maya = "^0.6"
+pydantic = "^2.3"
+pymysql = "^1.1"
+rethinkdb = "^2.4"
+wrapenvars = "^0.1.0"
+httpx = "^0.25.1"
+PyJWT = "^2.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "23.9.1"
+flake8 = "6.1.0"
+boto3 = "^1.28"
+chalice = "^1.29"
+ipython = "^8.15"
+isort = "5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.ruff]
+line-length = 79
+target-version = "py310"
+
